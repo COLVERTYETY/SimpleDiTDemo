@@ -11,4 +11,6 @@ This repo is a simple demonstration of a DiT model. The model is trained on MNIS
 
 ![alt text](image.png)
 
-# [demo here](some link.com)
+# check out the demo at the following link:
+
+-> [DiT Demo](https://colvertyety.github.io/SimpleDiTDemo/)
