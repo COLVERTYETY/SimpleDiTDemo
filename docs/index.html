@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diffusion Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.js"></script>
+</head>
+<body>
+    <h1>Simple DiT Demo</h1>
+    
+    <!-- Loading Info Box -->
+    <div class="loading-box" id="loadingBox">
+        <span id="loadingText">Model loading...</span>
+        <div class="spinner"></div>
+        <div class="info-tooltip" id="infoTooltip">
+            <p>This website demonstrates a simple DiT model.</p>
+            <p>The demonstration implementation uses a couple of shortcuts.</p>
+            <p>The model is deployed in the browser with ONNX.</p>
+        </div>
+    </div>
+    <div class="container">
+        <!-- Image container for cascading effect -->
+        <div class="image-slider-wrapper">
+            <!-- Previous images will cascade here -->
+            <div class="image-cascade" id="imageCascade"></div>
+        </div>
+
+        <!-- Diffusion Steps Slider -->
+        <div class="slider-container">
+            <input type="range" id="diffusionSlider" min="0" max="50" value="0">
+            <label for="diffusionSlider">Diffusion Steps: <span id="sliderValue">0</span></label>
+        </div>
+
+        <!-- Label Slider -->
+        <div class="slider-container">
+            <input type="range" id="labelSlider" min="0" max="9" value="0">
+            <label for="labelSlider">Label Value: <span id="indexValue">0</span></label>
+        </div>
+
+        <!-- Play Button -->
+        <div class="play-button-container">
+            <button id="playButton">Diffuse !</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

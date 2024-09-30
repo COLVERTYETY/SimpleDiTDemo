@@ -1,0 +1,137 @@
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    /* top margin */
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-slider-wrapper {
+    position: relative;
+    width: 350px; /* Main image width */
+    height: 350px; /* Main image height */
+    margin-bottom: 20px;
+}
+
+/* Cascading previous images */
+.image-cascade img {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    transition: all 0.5s ease;
+    opacity: 0.5;
+}
+
+/* Main image styling */
+.current-image {
+    z-index: 10; /* Ensure the main image is on top */
+    opacity: 1;
+    transform: translate(0, 0); /* Keep centered */
+}
+
+/* Slider styling */
+.slider-container {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-container input[type="range"] {
+    width: 300px;
+    margin-right: 10px; /* Space between slider and label */
+}
+
+.play-button-container {
+    margin-top: 10px;
+}
+
+#playButton {
+    padding: 10px 20px;
+    font-size: 1.2em;
+}
+/* Title Section */
+h1 {
+    position: absolute;
+    top: 10px;  /* Adjust distance from top */
+    left: 50%;
+    font-size: 2em;
+    text-align: center;
+    transform: translateX(-50%);
+    margin-top: 10px;
+}
+
+/* Loading Box positioned at the top */
+.loading-box {
+    position: absolute;
+    top: 60px;  /* Adjust distance from top */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10;
+}
+
+.loading-box:hover {
+    background-color: #bbb;
+}
+
+/* Spinner */
+.spinner {
+    width: 20px;
+    height: 20px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #02101a;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+}
+
+/* Tooltip */
+.info-tooltip {
+    display: none;
+    position: absolute;
+    bottom: -100px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+    text-align: center;
+    font-size: 0.9em;
+    z-index: 110;
+}
+
+.loading-box:hover .info-tooltip {
+    display: block;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
